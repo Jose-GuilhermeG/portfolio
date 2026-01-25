@@ -1,10 +1,16 @@
-//imports
+//import
+import { useState } from "react"
+
+//components imports
 import SimpleHeader from "./assets/components/headers/SimpleHeader"
 import PrimaryText from "./assets/features/primary_title/PrimaryTitle"
 import ProfilePhoto from "./assets/features/profile_photo/ProfilePhoto"
 import SocialLinks from "./assets/features/social/SocialLinks"
 import SimpleTitle from "./assets/components/title/SimpleTitle"
 import SkillGalery from "./assets/features/skills/SkillsGalery"
+import FloatButton from "./assets/features/float_button/FloatButton"
+
+
 
 function Index() {
 
@@ -18,7 +24,7 @@ function Index() {
 
     const social_links = [
         {href : 'https://www.linkedin.com/in/jose-guilhermeg/' , src : "/icons/linkedin_icon.svg" , alt : "linkedin icon" },
-        {href : null , src : "/icons/instagram_icon.svg" , alt : "instagram icon" },
+        {href : 'https://www.instagram.com/jose.guilherme.g/' , src : "/icons/instagram_icon.svg" , alt : "instagram icon" },
         {href : 'https://github.com/Jose-GuilhermeG' , src : "/icons/github_icon.svg" , alt : "github icon" },
     ]
 
@@ -35,6 +41,8 @@ function Index() {
         {image : "/icons/tailwind-green-icon.svg" , hover_image : "/icons/tailwind-white-icon.svg"},
     ]
 
+
+
     return (
         <main className="h-4/5">
             <SimpleHeader links_list={header_links}/>
@@ -47,6 +55,7 @@ function Index() {
                 <SimpleTitle content="tecnologias" id="tecnologias"/>
                 <SkillGalery skil_list={skill_list}/>
             </section>
+            <FloatButton src="/icons/translate-icon.png" alt="translate icon" />
         </main>
     )
 }

@@ -86,3 +86,27 @@ li{
 .shadow-effect:hover::before{
     scale:100%;
 }
+
+
+.item {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.item:nth-child(1) {
+  animation-name: move-left;
+}
+
+@keyframes move-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+.item:nth-child(3) {
+  animation-name: move-right;
+}
+
+@keyframes move-right {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
