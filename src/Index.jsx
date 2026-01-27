@@ -20,11 +20,11 @@ import location_icon from "./assets/icons/location-icon.svg"
 function Index() {
 
     const header_links = [
-        {text : "Sobre Mim" , link : null},
+        {text : "Sobre Mim" , link : "#about_me"},
         {text : "Tecnologias" , link : "#tecnologias"},
         {text : "Conhecimentos" , link : null},
         {text : "Projetos" , link : null},
-        {text : "Contato" , link : null},
+        {text : "Contato" , link : "#general"},
     ]
 
     const social_links = [
@@ -76,13 +76,13 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
             </section>
             <section className="w-full">
                 <SimpleTitle content="Informações" id="tecnologias"/>
-                <div className="w-4/5 m-auto h-[80vh] grid grid-cols-2 grid-rows-2 gap-5 py-5">
-                    <InfoContainer title="Sobre Mim" style={{gridRowStart : 1 , gridRowEnd : 4 }}>
-                        <p className="w-4/5 h-9/10 m-auto text-[18px]">
+                <div className="w-4/5 m-auto h-[80vh] grid grid-cols-2 grid-rows-2 gap-5 py-5 max-xl:grid-cols-1 max-xl:grid-rows-4 max-xl:h-fit max-micro:flex flex-col">
+                    <InfoContainer title="Sobre Mim" style={{gridRowStart : 1 , gridRowEnd : 4 }} id="about_me">
+                        <p className="w-4/5 h-9/10 m-auto text-[18px] overflow-y-scroll scrollbar-hide">
                             {about_me}
                         </p>
                     </InfoContainer>
-                    <InfoContainer title="Geral">
+                    <InfoContainer title="Geral" id="general">
                         <ul>
                             <ItemListIcon src={location_icon} content={location} alt={"location icon"}/>
                             <ItemListIcon src={phone_icon} content={phone_number} alt="phone number icon"/>

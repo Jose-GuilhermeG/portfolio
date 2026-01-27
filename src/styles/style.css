@@ -19,6 +19,12 @@
 
     --breakpoint-md : 750px;
     --breakpoint-lg : 1100px;
+    --breakpoint-xl : 1200px;
+    --breakpoint-micro : 450px;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 li{
@@ -44,52 +50,26 @@ li{
     transform: scaleX(100%);
 }
 
-.write_effect_animation::before{
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background : none;
-    left: 0;
-    right: 0;
-    top: 10%;
-    border-right: 2px white solid;
-    z-index: 0;
-    animation: write_effect_animation 1s infinite;
-    transition: all 0.5s ease-in-out;
-}
 
 .write_effect_animation{
-    position: relative;
+    border-right: 2px solid white;
+    margin: 0 5px;
+    animation: write_effect_animation 1s infinite;
 }
+
 
 @keyframes write_effect_animation {
     0%{
-        border-right: 0px;
+        border-color: transparent;
+    }
+    50%{
+        border-color: white;
     }
     100%{
-        border-right: 2px solid white;
+        border-color: transparent;
     }
 }
 
-.shadow-effect::before{
-    background-color: var(--color-light-green);
-    width: calc(var(--spacing) * 20);
-    height: calc(var(--spacing) * 20);
-    content: "";
-    position: absolute;
-    border-radius: 100%;
-    left: 0;
-    top: 0;
-    transform: translate(-10% , -10%);
-    filter: blur(25px);
-    scale: 0;
-    transition: 0.1s all ease-in-out;
-}
-
-.shadow-effect:hover::before{
-    scale:100%;
-}
 
 
 .item {
@@ -113,4 +93,12 @@ li{
 @keyframes move-right {
   from { transform: translateX(0); }
   to   { transform: translateX(100%); }
+}
+
+.scrollbar-hide { 
+    scrollbar-width: none;
+ }
+
+ .scrollbar-hide::-webkit-scrollbar { 
+    display: none; 
 }

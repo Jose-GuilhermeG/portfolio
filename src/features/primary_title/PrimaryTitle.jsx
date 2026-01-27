@@ -39,9 +39,10 @@ function PrimaryText({
   return (
     <h1
       id={component_id}
-      className="text-white px-5 m-auto w-fit top-10 font-inter font-bold text-[38px] max-lg:text-[30px] max-md:text-[25px] capitalize text-center write_effect_animation overflow-hidden"
+      className="text-white px-5 m-auto w-fit top-10 font-inter font-bold text-[38px] max-lg:text-[30px] max-md:text-[25px] capitalize text-center overflow-hidden relative"
     >
       {renderContent()}
+      <span className="write_effect_animation"></span>
     </h1>
   );
 }
