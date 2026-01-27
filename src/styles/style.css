@@ -11,10 +11,14 @@
 @theme {
     --color-light-green : #11FA00;
     --color-dark-green : #076400;
+    --color-primary-gray : #D2D2D2;
 
     --font-inter : "inter";
 
     --tracking-normal : 5px;
+
+    --breakpoint-md : 750px;
+    --breakpoint-lg : 1100px;
 }
 
 li{
