@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-function SkillCard({image , hover_image , alt}){
+function SkillCard({children}){
     const BASE_URL = import.meta.env.BASE_URL
 
     return (
@@ -11,8 +11,9 @@ function SkillCard({image , hover_image , alt}){
             transition={{ duration: 0.3 , ease : 'easeInOut'}}
             viewport={{ once: false }} 
         >
-            <img src={BASE_URL + image} alt={alt} className="block group-hover:hidden transition-transform" />
-            <img src={BASE_URL + hover_image} alt={alt} className="hidden group-hover:block transition-transform" />
+            <div className="[&_svg]:w-16 [&_svg]:h-16 text-light-green group-hover:text-white block relative">
+                {children}
+            </div>
         </motion.div>
     )
 }

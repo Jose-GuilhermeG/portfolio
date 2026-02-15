@@ -19,7 +19,20 @@ import phone_icon from "./assets/icons/phone-icon.svg"
 import email_icon from "./assets/icons/email-icon.svg"
 import location_icon from "./assets/icons/location-icon.svg"
 
-function Index() {
+//skils icons
+import DjangoIcon from "./assets/icons/djangoIcon.svg?react"
+import MysqlIcon from "./assets/icons/mysqlIcon.svg?react"
+import DockerIcon from "./assets/icons/dockerIcon.svg?react"
+import RedisIcon from "./assets/icons/redisIcon.svg?react"
+import KafkaIcon from "./assets/icons/kafkaIcon.svg?react"
+import PythonIcon from "./assets/icons/pythonIcon.svg?react"
+import JavaIcon from "./assets/icons/javaIcon.svg?react"
+import SpringBootIcon from "./assets/icons/springBootIcon.svg?react"
+import ReactIcon from "./assets/icons/reactIcon.svg?react"
+import TailwindIcon from "./assets/icons/tailwindIcon.svg?react"
+import PrometheusIcon from "./assets/icons/prometheusIcon.svg?react"
+
+export default function Index() {
     const BASE_URL = import.meta.env.BASE_URL
 
     const header_links = [
@@ -37,17 +50,17 @@ function Index() {
     ]
 
     const skill_list = [
-        {image : "/icons/django-green-icon.svg" , hover_image : "/icons/django-white-icon.svg"},
-        {image : "/icons/mysql-green-icon.svg" , hover_image : "/icons/mysql-white-icon.svg"},
-        {image : "/icons/docker-green-icon.svg" , hover_image : "/icons/docker-white-icon.svg"},
-        {image : "/icons/redis-green-icon.svg" , hover_image : "/icons/redis-white-icon.svg"},
-        {image : "/icons/kafka-green-icon.svg" , hover_image : "/icons/kafka-white-icon.svg"},
-        {image : "/icons/python-green-icon.svg" , hover_image : "/icons/python-white-icon.svg"},
-        {image : "/icons/java-green-icon.svg" , hover_image : "/icons/java-white-icon.svg"},
-        {image : "/icons/spring-boot-green-icon.svg" , hover_image : "/icons/spring-boot-white-icon.svg"},
-        {image : "/icons/react-green-icon.svg" , hover_image : "/icons/react-white-icon.svg"},
-        {image : "/icons/tailwind-green-icon.svg" , hover_image : "/icons/tailwind-white-icon.svg"},
-        {image : "/icons/prometheus-green-icon.svg" , hover_image : "/icons/prometheus-white-icon.svg"},
+        {icon : <DjangoIcon/>},
+        {icon: <MysqlIcon/>},
+        {icon : <DockerIcon/>},
+        {icon: <RedisIcon/>},
+        {icon : <KafkaIcon/>},
+        {icon: <PythonIcon/>},
+        {icon : <JavaIcon/>},
+        {icon : <SpringBootIcon/>},
+        {icon : <ReactIcon/>},
+        {icon : <TailwindIcon/>},
+        {icon : <PrometheusIcon/>},
     ]
 
     const phone_number = "84 999377152"
@@ -147,5 +160,3 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
         </main>
     )
 }
-
-export default Index
