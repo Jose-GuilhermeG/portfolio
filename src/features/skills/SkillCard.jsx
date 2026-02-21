@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion" // eslint-disable-line
 
 function SkillCard({children}){
     const BASE_URL = import.meta.env.BASE_URL

@@ -1,6 +1,6 @@
 import Banner from "../../components/banner/Banner"
 import SimpleTitle from "../../components/title/SimpleTitle"
-import { motion } from "framer-motion"
+import { motion } from "framer-motion" // eslint-disable-line
 
 export default function ProjectsView({children , project_url , project_title , ...props}){
     const BASE_URL = import.meta.env.BASE_URL

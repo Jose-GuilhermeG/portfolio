@@ -1,5 +1,5 @@
 //import
-import { motion } from "framer-motion"
+import { motion } from "framer-motion" // eslint-disable-line
 
 //components imports
 import SimpleHeader from "./components/headers/SimpleHeader"
@@ -63,8 +63,8 @@ export default function Index() {
         {icon : <PrometheusIcon/>},
     ]
 
-    const phone_number = "84 999377152"
-    const email = "example@example.com"
+    const phone_number = "+55 84 999377152"
+    const email = "gulgel.guilherme@gmail.com"
     const location = "Rodolfo Fernandes (RN)"
 
     const about_me = `Desenvolvedor Backend com foco em Python, atuando principalmente com Django e Django REST Framework no desenvolvimento de APIs REST escaláveis, também possuindo experiência com FastAPI para construção de serviços de alta performance.
