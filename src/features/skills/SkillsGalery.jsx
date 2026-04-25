@@ -5,7 +5,7 @@ function SkillGalery({skil_list}){
         <div className="w-full h-fit py-5 max-xl:grid-cols-2 max-sm:grid-cols-1 grid grid-cols-3 grid-row m-auto gap-10 items-center justify-items-center">
             {
                 skil_list.map((element , index)=>(
-                    <SkillCard key={index}>
+                    <SkillCard key={index} level={element.level}>
                         {element.icon}
                     </SkillCard>
                 ))

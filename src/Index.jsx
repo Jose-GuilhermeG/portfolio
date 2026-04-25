@@ -8,11 +8,11 @@ import ProfilePhoto from "./features/profile_photo/ProfilePhoto"
 import SocialLinks from "./features/social/SocialLinks"
 import SimpleTitle from "./components/title/SimpleTitle"
 import SkillGalery from "./features/skills/SkillsGalery"
-import FloatButton from "./features/float_button/FloatButton"
 import InfoContainer from "./components/info_container/InfoContainer"
 import ItemListIcon from "./components/lists/ItemList"
 import ItemListTitle from "./components/lists/ItemListTitle"
 import ProjectsView from "./features/projects/projects_view"
+import ProjectCard from "./features/projects/projectCard"
 
 //icons imports
 import phone_icon from "./assets/icons/phone-icon.svg"
@@ -20,17 +20,12 @@ import email_icon from "./assets/icons/email-icon.svg"
 import location_icon from "./assets/icons/location-icon.svg"
 
 //skils icons
-import DjangoIcon from "./assets/icons/djangoIcon.svg?react"
-import MysqlIcon from "./assets/icons/mysqlIcon.svg?react"
-import DockerIcon from "./assets/icons/dockerIcon.svg?react"
-import RedisIcon from "./assets/icons/redisIcon.svg?react"
-import KafkaIcon from "./assets/icons/kafkaIcon.svg?react"
-import PythonIcon from "./assets/icons/pythonIcon.svg?react"
-import JavaIcon from "./assets/icons/javaIcon.svg?react"
-import SpringBootIcon from "./assets/icons/springBootIcon.svg?react"
-import ReactIcon from "./assets/icons/reactIcon.svg?react"
-import TailwindIcon from "./assets/icons/tailwindIcon.svg?react"
-import PrometheusIcon from "./assets/icons/prometheusIcon.svg?react"
+import { SiFastapi , SiPostgresql , SiPython , SiDjango, SiRabbitmq, SiApachekafka, SiPytest, SiJest, SiDocker, SiGithub } from "react-icons/si"
+import { DiJava, DiMysql, DiRedis } from "react-icons/di"
+import { BiLogoSpringBoot } from "react-icons/bi"
+import { BsTypescript } from "react-icons/bs"
+import { FaJsSquare, FaReact } from "react-icons/fa"
+import { RiTailwindCssFill } from "react-icons/ri"
 
 export default function Index() {
     const BASE_URL = import.meta.env.BASE_URL
@@ -50,17 +45,30 @@ export default function Index() {
     ]
 
     const skill_list = [
-        {icon : <DjangoIcon/>},
-        {icon: <MysqlIcon/>},
-        {icon : <DockerIcon/>},
-        {icon: <RedisIcon/>},
-        {icon : <KafkaIcon/>},
-        {icon: <PythonIcon/>},
-        {icon : <JavaIcon/>},
-        {icon : <SpringBootIcon/>},
-        {icon : <ReactIcon/>},
-        {icon : <TailwindIcon/>},
-        {icon : <PrometheusIcon/>},
+        {icon : <SiDjango/> , level : 50},
+        {icon : <SiFastapi/> , level : 45},
+        {icon : <SiPostgresql/> , level : 50},
+        {icon : <SiPython/> , level : 70},
+        {icon : <BiLogoSpringBoot/> , level : 1},
+        {icon : <DiJava/> , level : 20},
+        {icon : <DiMysql/> , level : 60},
+        {icon : <DiRedis/> , level : 50},
+        {icon : <SiRabbitmq/> , level : 50},
+        {icon : <FaJsSquare/> , level : 50},
+        {icon : <BsTypescript/> , level : 50},
+        {icon : <FaReact/> , level : 50},
+        {icon : <RiTailwindCssFill/> , level : 50},
+        {icon : <SiApachekafka/> , level : 50},
+        {icon : <SiPytest/> , level : 70},
+        {icon : <SiJest/> , level : 25},
+        {icon : <SiDocker/> , level : 50},
+        {icon : <SiGithub/> , level : 50},
+    ]
+
+    const projetos = [
+        {title : "simple to do" , skills : ["django","django restframework","postgres" , "react" , "typescript" ,"shadcon" , "tailwindcss"] , description : "Um simples to do list criado com o intuito de colocar em pratica alguns conhecimentos sobre front-end"},
+        {title : "EclipseApi" , skills : ["django","django restframework","postgres" , "docker" , "pytest", "kafka" , "redis"] , description : "Uma api de um e-commerce "},
+        {title : "food-order" , skills : ["fastapi","react","websockt" , "react" , "tailwindcss" , "docker"] , description : "Sistema de pedidos de alimentos"},
     ]
 
     const phone_number = "+55 84 999377152"
@@ -110,7 +118,7 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                     </InfoContainer>
                 </div>
             </section>
-            <section className="bg-gray-900 w-full">
+            <section className="bg-gray-950 w-full min-h-fit">
                    <ProjectsView project_title={<span>food order<br />Pedidos e retirada em tempo real</span>} project_url='https://github.com/Jose-GuilhermeG/food_order'>
                         <div className="w-9/10 grid grid-cols-2 grid-rows-2 m-auto gap-15 mb-50 overflow-hidden">
                              <motion.div 
@@ -155,8 +163,11 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                             </motion.div>
                         </div>
                    </ProjectsView>
+                   <SimpleTitle content="Outros projetos" />
+                   <div className={`flex ${projetos.length > 2 ? "justify-between" : "justify-around"} w-9/10 m-auto h-fit py-10 flex-wrap`}>
+                        {projetos.map(element=><ProjectCard {...element}/>)}
+                   </div>
             </section>
-            <FloatButton src="/icons/translate-icon.svg" alt="translate icon" />
         </main>
     )
 }
