@@ -1,22 +1,30 @@
-export default function ProjectCard({title , description = "" , skills = []  }){
+import { BiCode } from "react-icons/bi"
+import { motion } from "framer-motion"
+
+export default function ProjectCard({title , description = "" , skills = [] , icon = <BiCode/>  }){
     return (
-        <div className="flex flex-col justify-around bg-gray-800 min-h-[35vh] w-3/10 my-5 rounded-[10px] p-2 text-white">
-            <h1 className="text-4xl font-medium font-serif py-2 capitalize">
-                {title}
-            </h1>
-            <div className="flex flex-wrap justify-start items-center my-5">
-                {skills.map(element=>(
-                    <div className="font-medium mx-2 border border-gray-500 p-1 my-1 rounded-[5px] capitalize">
-                        {element}
-                    </div>
-                ))}
-            </div>
-            <p className="px-2 py-5">
-                {description}
-            </p>
-            <button className="w-full text-center py-5 bg-white text-black rounded-[10px]">
-                Ver No GitHub 
-            </button>
-        </div>
+            <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 , ease : 'easeInOut'}}
+            viewport={{ once: false }} 
+            className="flex flex-col justify-start p-5 min-h-[35vh] w-3/10 my-5 rounded-[10px] text-white bg-gray-900">
+                <div className="w-fit p-1 text-3xl border my-2 rounded-[5px]">
+                    {icon}
+                </div>
+                <h1 className="text-4xl font-black font-serif py-2 capitalize">
+                    {title}
+                </h1>
+                <p className="py-5 font-light">
+                    {description}
+                </p>
+                <div className="flex flex-wrap justify-start items-center my-2 font-light text-gray-200">
+                    {skills.map(element=>(
+                        <div className="mr-4 border border-gray-500 p-1 my-1 rounded-[5px] capitalize">
+                            {element}
+                        </div>
+                    ))}
+                </div>
+            </motion.div>
     )
 }
