@@ -18,7 +18,7 @@ import ProjectCard from "./features/projects/projectCard"
 import phone_icon from "./assets/icons/phone-icon.svg"
 import email_icon from "./assets/icons/email-icon.svg"
 import location_icon from "./assets/icons/location-icon.svg"
-import { BiListCheck , BiStore, BiUser } from "react-icons/bi"
+import { BiArrowFromTop, BiListCheck , BiStore, BiUser } from "react-icons/bi"
 import { IoConstruct, IoFastFood } from "react-icons/io5"
 
 //skils icons
@@ -26,7 +26,7 @@ import { SiFastapi , SiPostgresql , SiPython , SiDjango, SiRabbitmq, SiApachekaf
 import { DiJava, DiMysql, DiRedis } from "react-icons/di"
 import { BiLogoSpringBoot } from "react-icons/bi"
 import { BsTypescript } from "react-icons/bs"
-import { FaBook, FaCode, FaJsSquare, FaReact } from "react-icons/fa"
+import { FaArrowDown, FaBook, FaCode, FaJsSquare, FaReact } from "react-icons/fa"
 import { RiTailwindCssFill } from "react-icons/ri"
 import IconTitle from "./components/title/IconTitle"
 
@@ -49,23 +49,23 @@ export default function Index() {
 
     const skill_list = [
         {icon : <SiDjango/> , level : 50},
-        {icon : <SiFastapi/> , level : 45},
+        {icon : <SiFastapi/> , level : 50},
         {icon : <SiPostgresql/> , level : 50},
         {icon : <SiPython/> , level : 70},
-        {icon : <BiLogoSpringBoot/> , level : 1},
+        {icon : <BiLogoSpringBoot/> , level : 0},
         {icon : <DiJava/> , level : 20},
-        {icon : <DiMysql/> , level : 60},
+        {icon : <DiMysql/> , level : 70},
         {icon : <DiRedis/> , level : 50},
         {icon : <SiRabbitmq/> , level : 50},
-        {icon : <FaJsSquare/> , level : 50},
-        {icon : <BsTypescript/> , level : 50},
+        {icon : <FaJsSquare/> , level : 70},
+        {icon : <BsTypescript/> , level : 60},
         {icon : <FaReact/> , level : 50},
-        {icon : <RiTailwindCssFill/> , level : 50},
-        {icon : <SiApachekafka/> , level : 50},
-        {icon : <SiPytest/> , level : 70},
+        {icon : <RiTailwindCssFill/> , level : 60},
+        {icon : <SiApachekafka/> , level : 20},
+        {icon : <SiPytest/> , level : 60},
         {icon : <SiJest/> , level : 25},
         {icon : <SiDocker/> , level : 50},
-        {icon : <SiGithub/> , level : 50},
+        {icon : <SiGithub/> , level : 60},
     ]
 
     const projetos = [
@@ -201,11 +201,37 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                         Conhecimentos
                    </IconTitle>
                    <div className="flex justify-between items-center w-9/10 m-auto min-h-[40vh] py-5">
-                    <div className="h-full min-h-[40vh] grid grid-cols-1 w-7/10">
-                        <div className="h-full w-full bg-gray-800"></div>
+                    <div className="h-fit p-2 w-7/10 min-h-[40vh] flex flex-col justify-center items-center gap-3">
+                        {[1,1,1,].map(element=>(
+                            <div className="group text-white p-4 w-full bg-gray-800 rounded-[10px] origin-top cursor-pointer overflow-hidden h-[12vh] hover:h-[50vh] transition-all duration-700">
+                                <div className="h-20 flex items-center gap-5 relative">
+                                    <div className="p-1 border rounded-[10px] text-3xl w-fit h-fit">
+                                        <FaCode/>
+                                    </div>
+                                    <h1 className="text-3xl font-black font-serif">
+                                        Desenvolvimento Backend
+                                    </h1>
+                                    <span>
+                                        <FaArrowDown className="text-3xl group-hover:rotate-[-180deg] transition-transform duration-600 absolute right-2 top-2/6"/>
+                                    </span>
+                                </div>
+                                <p className="origin-top h-fit opacity-0 group-hover:opacity-100 transition-all duration-600">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio reprehenderit esse veniam sint itaque consequatur unde soluta eum consectetur mollitia dolorum, nostrum, maiores tempore nobis ipsa tenetur? Eaque, nihil vero!
+                                    Repudiandae, fuga? Non cum consequatur odit accusantium eius error ab facere harum incidunt hic sapiente delectus distinctio quisquam libero, provident dolore nulla tempora illo assumenda impedit perspiciatis architecto dolorum corrupti!
+                                    Deleniti nesciunt ipsam perferendis? Voluptatum quo facere, accusamus possimus rerum ratione aperiam inventore placeat ex! Sunt, beatae repellendus. Error modi ullam nemo magnam. Pariatur facere maxime laboriosam officia. Eum, nulla?
+                                    Adipisci labore nihil unde rem veritatis consectetur autem, aut ipsam eveniet earum et soluta dolorum perferendis explicabo tempora iste deleniti ratione hic ducimus. Beatae mollitia commodi ad, nostrum soluta officiis.
+                                    Provident deserunt, quasi illum ratione odio magni dolorem quae id delectus voluptas temporibus quisquam totam dignissimos cumque itaque sed quibusdam maxime earum omnis ad libero tempore asperiores quia nam! Totam.
+                                    Reiciendis magni, soluta facere maiores error eligendi dolorum! Placeat blanditiis accusantium expedita tenetur ipsa nisi omnis asperiores, magni illum facilis officiis, culpa et sequi nemo laudantium, reiciendis ex minus a.
+                                    Nesciunt ad molestiae veritatis at esse ipsum eum corrupti aspernatur excepturi, dicta commodi iste blanditiis laborum, nihil atque nemo laudantium magni deserunt quibusdam. Iure in voluptatibus totam voluptate praesentium labore.
+                                    Animi explicabo amet eius voluptates nesciunt possimus molestias doloremque, excepturi et, dolorem atque, necessitatibus eveniet odio exercitationem ut velit qui quisquam minus. Dicta voluptate, dignissimos ipsa dolor cumque voluptates porro!
+                                    Tempore dignissimos, nulla ipsa aliquam ratione id at nemo blanditiis impedit pariatur architecto, esse excepturi odio vero quis natus, itaque cumque veniam ipsum hic minima laborum quos. Voluptatibus, velit temporibus.
+                                    Distinctio, dolor voluptatum quos maxime voluptas cumque voluptatem vitae maiores voluptate debitis obcaecati dignissimos incidunt at sint? Exercitationem iusto minus distinctio quas ipsa sint, rerum vel atque nobis itaque eveniet.
+                                </p>
+                            </div>
+                        ))}
                     </div>
 
-                     <a href="https://roadmap.sh"><img src="https://roadmap.sh/card/tall/65e134768947e435e7577407?variant=dark&roadmaps=software-design-architecture%2Cbackend%2Csql" alt="roadmap.sh"/></a>
+                     <a href="https://roadmap.sh" target="_blank"><img src="https://roadmap.sh/card/tall/65e134768947e435e7577407?variant=dark&roadmaps=software-design-architecture%2Cbackend%2Csql%2Cgit-github" alt="roadmap.sh"/></a>
 
                    </div>
 

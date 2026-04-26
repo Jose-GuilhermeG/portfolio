@@ -8,7 +8,7 @@ export default function ProjectCard({title , description = "" , skills = [] , ic
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 , ease : 'easeInOut'}}
             viewport={{ once: false }} 
-            className="flex flex-col justify-start p-5 min-h-[35vh] w-3/10 my-5 rounded-[10px] text-white bg-gray-900">
+            className="flex flex-col justify-start p-5 min-h-[35vh] min-w-sm w-3/10 my-5 rounded-[10px] text-white bg-gray-900">
                 <div className="w-fit p-1 text-3xl border my-2 rounded-[5px]">
                     {icon}
                 </div>
