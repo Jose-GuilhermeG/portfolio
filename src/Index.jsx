@@ -18,14 +18,17 @@ import ProjectCard from "./features/projects/projectCard"
 import phone_icon from "./assets/icons/phone-icon.svg"
 import email_icon from "./assets/icons/email-icon.svg"
 import location_icon from "./assets/icons/location-icon.svg"
+import { BiListCheck , BiStore, BiUser } from "react-icons/bi"
+import { IoConstruct, IoFastFood } from "react-icons/io5"
 
 //skils icons
 import { SiFastapi , SiPostgresql , SiPython , SiDjango, SiRabbitmq, SiApachekafka, SiPytest, SiJest, SiDocker, SiGithub } from "react-icons/si"
 import { DiJava, DiMysql, DiRedis } from "react-icons/di"
 import { BiLogoSpringBoot } from "react-icons/bi"
 import { BsTypescript } from "react-icons/bs"
-import { FaJsSquare, FaReact } from "react-icons/fa"
+import { FaBook, FaCode, FaJsSquare, FaReact } from "react-icons/fa"
 import { RiTailwindCssFill } from "react-icons/ri"
+import IconTitle from "./components/title/IconTitle"
 
 export default function Index() {
     const BASE_URL = import.meta.env.BASE_URL
@@ -66,9 +69,28 @@ export default function Index() {
     ]
 
     const projetos = [
-        {title : "simple to do" , skills : ["django","django restframework","postgres" , "react" , "typescript" ,"shadcon" , "tailwindcss"] , description : "Um simples to do list criado com o intuito de colocar em pratica alguns conhecimentos sobre front-end"},
-        {title : "EclipseApi" , skills : ["django","django restframework","postgres" , "docker" , "pytest", "kafka" , "redis"] , description : "Uma api de um e-commerce "},
-        {title : "food-order" , skills : ["fastapi","react","websockt" , "react" , "tailwindcss" , "docker"] , description : "Sistema de pedidos de alimentos"},
+        {
+            title : "simple to do" , 
+            skills : ["django","django restframework","postgres" , "docker" , "react" , "typescript" ,"shadcn" , "tailwindcss"] , 
+            description : `Uma aplicação de gerenciamento de tarefas focada na experiência do usuário e na organização pessoal. O projeto foi desenvolvido com o objetivo de consolidar conceitos de integração entre Frontend e Backend, garantindo uma interface fluida e tendo Implementação de um CRUD completo com persistência de dados, tipagem estática para maior segurança do código e suporte a Markdown.`, 
+            icon : <BiListCheck/>},
+        {
+            title : "EclipseApi" , 
+            skills : ["django","django restframework","postgres" , "docker" , "pytest", "kafka" , "redis"] , 
+            description : `Uma API robusta voltada para o ecossistema de e-commerce, projetada para lidar com fluxos complexos de compra e comunicação. O foco principal deste projeto é a confiabilidade e a escalabilidade do sistema de vendas utilizando mensageria Assíncrona para desacoplar o envio de notificações (e-mails), garantindo que a experiência de compra não seja interrompida por processos externos. O projeto é assegurado por uma suíte de testes automatizados, garantindo a integridade das regras de negócio e a prevenção de regressões durante o desenvolvimento.` , 
+            icon : <BiStore/>},
+        {
+            title : "food-order" , 
+            skills : ["fastapi","react","websockt" , "react" , "tailwindcss" , "docker"] , 
+            description :`Sistema completo de gestão de pedidos em tempo real para praças de alimentação ou restaurantes. A aplicação conecta todas as pontas da operação, desde o cliente até a cozinha, otimizando o fluxo de trabalho e sendo construído sob os princípios da Arquitetura Limpa (Clean Architecture), o sistema mantém uma separação clara entre as regras de negócio e as interfaces externas. A aplicação utiliza comunicação em tempo real para atualização de status e implementa uma gestão de filas eficiente, garantindo que a equipe operacional siga uma ordem lógica e organizada de produção.` ,
+            icon : <IoFastFood/>
+        },
+        {
+            title : "Meu portfolio",
+            icon : <BiUser/>,
+            skills : ["react" , "tailwindcss"],
+            description : "Um hub centralizado que serve como minha vitrine digital, projetado para apresentar minha trajetória, competências técnicas e os resultados dos meus projetos de forma clara e profissional.",
+        }
     ]
 
     const phone_number = "+55 84 999377152"
@@ -87,7 +109,7 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
 
 
     return (
-        <main>
+        <main className="bg-gray-950">
             <SimpleHeader links_list={header_links}/>
             <section className=" h-3/5 w-4/5 m-auto min-h-fit flex flex-col justify-around items-center">
             <PrimaryText component_id="hello_text" feature_color="--color-light-green" feature_text={["Guilherme","back-end"]} text="Olá, me chamo Guilherme e sou um Desenvolvedor Back-end"/>
@@ -95,11 +117,15 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
             <SocialLinks icons_list={social_links} />
             </section>
             <section className="w-4/5 m-auto">
-                <SimpleTitle content="tecnologias" id="tecnologias"/>
+                <SimpleTitle id="tecnologias" className="w-9/10 m-auto my-10" icon={<FaCode/>} p="Principais tecnologias que eu uso">
+                    tecnologias
+                </SimpleTitle>
                 <SkillGalery skil_list={skill_list}/>
             </section>
             <section className="w-full py-20">
-                <SimpleTitle content="Informações" id="tecnologias"/>
+                <IconTitle icon={<BiUser/>} className="w-[72%] m-auto" p="algumas informações interesantes">
+                    Sobre Mim
+                </IconTitle>
                 <div className="w-4/5 m-auto h-[80vh] grid grid-cols-2 grid-rows-2 gap-5 py-5 max-xl:grid-cols-1 max-xl:grid-rows-4 max-xl:h-fit max-micro:flex flex-col">
                     <InfoContainer title="Sobre Mim" style={{gridRowStart : 1 , gridRowEnd : 4 }} id="about_me">
                         <p className="w-4/5 h-9/10 m-auto text-[18px] overflow-y-scroll scrollbar-hide">
@@ -118,7 +144,7 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                     </InfoContainer>
                 </div>
             </section>
-            <section className="bg-gray-950 w-full min-h-fit">
+            <section className="w-full min-h-fit">
                    <ProjectsView project_title={<span>food order<br />Pedidos e retirada em tempo real</span>} project_url='https://github.com/Jose-GuilhermeG/food_order'>
                         <div className="w-9/10 grid grid-cols-2 grid-rows-2 m-auto gap-15 mb-50 overflow-hidden">
                              <motion.div 
@@ -163,10 +189,26 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                             </motion.div>
                         </div>
                    </ProjectsView>
-                   <SimpleTitle content="Outros projetos" />
+                   <IconTitle icon={<IoConstruct/>} className="m-auto w-9/10 p-2" p="Mais criações minhas">
+                        Outros Projetos
+                   </IconTitle>
                    <div className={`flex ${projetos.length > 2 ? "justify-between" : "justify-around"} w-9/10 m-auto h-fit py-10 flex-wrap`}>
                         {projetos.map(element=><ProjectCard {...element}/>)}
                    </div>
+            </section>
+            <section>
+                   <IconTitle icon={<FaBook/>} className="m-auto w-9/10" p="O que eu sei">
+                        Conhecimentos
+                   </IconTitle>
+                   <div className="flex justify-between items-center w-9/10 m-auto min-h-[40vh] py-5">
+                    <div className="h-full min-h-[40vh] grid grid-cols-1 w-7/10">
+                        <div className="h-full w-full bg-gray-800"></div>
+                    </div>
+
+                     <a href="https://roadmap.sh"><img src="https://roadmap.sh/card/tall/65e134768947e435e7577407?variant=dark&roadmaps=software-design-architecture%2Cbackend%2Csql" alt="roadmap.sh"/></a>
+
+                   </div>
+
             </section>
         </main>
     )

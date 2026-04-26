@@ -7,7 +7,9 @@ export default function ProjectsView({children , project_url , project_title , .
     return (
         <div className="pb-10" {...props}>
             <div className="w-full bg-black py-10 pb-50">
-                    <SimpleTitle content="Ultimo Projeto" id="projects"/>
+                    <SimpleTitle id="projects">
+                        Ultimo Projeto
+                    </SimpleTitle>
                     <h1 className="text-3xl text-white capitalize font-light opacity-80 text-center font-inter">
                         {project_title}
                     </h1>
