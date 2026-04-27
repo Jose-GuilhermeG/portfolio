@@ -6,7 +6,7 @@ import { GrLocation } from "react-icons/gr"
 
 export default function ExperieceCard({title , location , content , skills = [] , index}){
     return (
-        <div className="text-white h-40 relative flex items-center">
+        <div className="text-white h-40 relative flex items-center mb-5">
             <motion.div 
             initial={{opacity : 0 , y : -10}}
             whileInView={{opacity : 1, y : 0}}

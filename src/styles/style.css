@@ -9,13 +9,16 @@
 }
 
 @theme {
-    --color-light-green : #11FA00;
+    --color-light-green : #89D146;
     --color-dark-green : #076400;
     --color-primary-gray : #D2D2D2;
 
     --font-inter : "inter";
 
     --tracking-normal : 5px;
+
+    --radius-base : 5px;
+    --radius-medium : 10px;
 
     --breakpoint-md : 750px;
     --breakpoint-lg : 1100px;

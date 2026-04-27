@@ -15,23 +15,22 @@ import ProjectsView from "./features/projects/projects_view"
 import ProjectCard from "./features/projects/projectCard"
 
 //icons imports
-import phone_icon from "./assets/icons/phone-icon.svg"
-import email_icon from "./assets/icons/email-icon.svg"
-import location_icon from "./assets/icons/location-icon.svg"
-import { BiCode, BiListCheck , BiStore, BiUser } from "react-icons/bi"
+import { BiCode, BiCopy, BiListCheck , BiStore, BiUser } from "react-icons/bi"
 import { IoConstruct, IoFastFood } from "react-icons/io5"
 
 //skils icons
 import { SiFastapi , SiPostgresql , SiPython , SiDjango, SiRabbitmq, SiApachekafka, SiPytest, SiJest, SiDocker, SiGithub } from "react-icons/si"
 import { DiJava, DiMysql, DiRedis } from "react-icons/di"
 import { BiLogoSpringBoot } from "react-icons/bi"
-import { BsTypescript } from "react-icons/bs"
-import {FaBook, FaCode, FaJsSquare, FaMoneyBill, FaReact } from "react-icons/fa"
+import { BsInstagram, BsTypescript } from "react-icons/bs"
+import {FaBook, FaCode, FaEnvelope, FaJsSquare, FaMapMarker, FaMoneyBill, FaPhone, FaReact } from "react-icons/fa"
 import { RiTailwindCssFill } from "react-icons/ri"
 import IconTitle from "./components/title/IconTitle"
 import KnowledgeCard from "./features/knowledge/knowledgeCards"
-import { MdWorkHistory } from "react-icons/md"
+import { MdContactPhone, MdWorkHistory } from "react-icons/md"
 import ExperieceCard from "./features/experiences/experienceCard"
+import BaseColorCardIcon from "./components/icons/BaseColorCardIcon"
+import ItemListContact from "./components/lists/itemListContact"
 
 export default function Index() {
     const BASE_URL = import.meta.env.BASE_URL
@@ -39,11 +38,12 @@ export default function Index() {
     
 
     const header_links = [
-        {text : "Sobre Mim" , link : "#about_me"},
         {text : "Tecnologias" , link : "#tecnologias"},
-        {text : "Conhecimentos" , link : null},
+        {text : "Sobre Mim" , link : "#about_me"},
+        {text : "experiencias" , link : "#experiences"},
         {text : "Projetos" , link : '#projects'},
-        {text : "Contato" , link : "#general"},
+        {text : "Conhecimentos" , link : "#knowledges"},
+        {text : "Contato" , link : "#contact"},
     ]
 
     const social_links = [
@@ -122,14 +122,16 @@ export default function Index() {
         },
     ]
 
-    const phone_number = "+55 84 999377152"
-    const email = "gulgel.guilherme@gmail.com"
-    const location = "Rodolfo Fernandes (RN)"
+    const contact = [
+        {icon : <FaPhone/> , content : "+55 84 999377152"},
+        {icon : <FaEnvelope/> , content : "gulgel.guilherme@gmail.com"},
+        {icon : <BsInstagram/> , content : "jose.guilherme.g"}
+    ]
 
     const experiences = [
         {
             title : "Desenvolvedor Full stack",
-            content : "Aplicação web construida com django , implementação de funcionalidades e testes junto a manutenção no sistema",
+            content : "Trabalhei em uma aplicação web construida com o framework django realizando implementação de funcionalidades e testes junto a manutenção no sistema",
             location : "NADIC",
             skills : ["python","django","postgres","html","tailwind","docker","selenium",]
         },
@@ -161,29 +163,20 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                 <SkillGalery skil_list={skill_list}/>
             </section>
             <section className="w-full py-20">
-                <IconTitle icon={<BiUser/>} className="w-[72%] m-auto" p="algumas informações interesantes">
+                <IconTitle icon={<BiUser/>} className="w-[72%] m-auto" p="algumas informações interesantes" id="about_me">
                     Sobre Mim
                 </IconTitle>
-                <div className="w-4/5 m-auto h-[80vh] grid grid-cols-2 grid-rows-2 gap-5 py-5 max-xl:grid-cols-1 max-xl:grid-rows-4 max-xl:h-fit max-micro:flex flex-col">
-                    <InfoContainer title="Sobre Mim" style={{gridRowStart : 1 , gridRowEnd : 4 }} id="about_me">
-                        <p className="w-4/5 h-9/10 m-auto text-[18px] overflow-y-scroll scrollbar-hide">
-                            {about_me}
-                        </p>
-                    </InfoContainer>
-                    <InfoContainer title="Geral" id="general">
-                        <ul>
-                            <ItemListIcon src={location_icon} content={location} alt={"location icon"}/>
-                            <ItemListIcon src={phone_icon} content={phone_number} alt="phone number icon"/>
-                            <ItemListIcon src={email_icon} content={email} alt={"email icon"}/>
-                        </ul>
-                    </InfoContainer>
-                </div>
+                <aside>
+                    <p className="w-2/5 mx-[14%] my-10 bg-gray-800 text-white font-light min-h-[40vh] rounded-2xl text-[18px]  p-5">
+                        {about_me}
+                    </p>
+                </aside>
             </section>
-            <section className="w-[72%] m-auto h-fit mb-30">
-                <IconTitle icon={<MdWorkHistory/>} p="Minhas Experiencias em Trabalho">
+            <section className="w-[72%] m-auto h-fit mb-50">
+                <IconTitle icon={<MdWorkHistory/>} p="Minhas Experiencias em Trabalho" id="experiences">
                     Experiencias
                 </IconTitle>
-                <div className="m-10 flex-col relative h-fit ">
+                <div className="m-10 flex-col relative h-fit gap-5">
                     <motion.div 
                         initial={{height : 0}}
                         whileInView={{height : "100%"}}
@@ -248,7 +241,7 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                    </div>
             </section>
             <section>
-                   <IconTitle icon={<FaBook/>} className="m-auto w-9/10" p="O que eu sei">
+                   <IconTitle icon={<FaBook/>} className="m-auto w-9/10" p="O que eu sei" id="knowledges">
                         Conhecimentos
                    </IconTitle>
                    <div className="flex justify-between items-center w-9/10 m-auto min-h-[40vh] py-5 flex-wrap gap-10">
@@ -258,6 +251,18 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                      <a href="https://roadmap.sh" target="_blank"><img src="https://roadmap.sh/card/tall/65e134768947e435e7577407?variant=dark&roadmaps=software-design-architecture%2Cbackend%2Csql%2Cgit-github" alt="roadmap.sh"/></a>
                    </div>
 
+            </section>
+            <section>
+                <IconTitle icon={<MdContactPhone/>} p="Como falar comigo" className="w-9/10 m-auto" id="contact">
+                    Contato
+                </IconTitle>
+                <div className="w-9/10 m-auto text-white">
+                <ul className="flex w-full justify-start gap-10 py-10 flex-wrap">
+                    {contact.map(element=>(
+                            <ItemListContact {...element}/>
+                    ))}
+                    </ul>
+                </div>
             </section>
         </main>
     )
