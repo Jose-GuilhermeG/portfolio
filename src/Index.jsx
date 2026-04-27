@@ -18,7 +18,7 @@ import ProjectCard from "./features/projects/projectCard"
 import phone_icon from "./assets/icons/phone-icon.svg"
 import email_icon from "./assets/icons/email-icon.svg"
 import location_icon from "./assets/icons/location-icon.svg"
-import { BiArrowFromTop, BiListCheck , BiStore, BiUser } from "react-icons/bi"
+import { BiListCheck , BiStore, BiUser } from "react-icons/bi"
 import { IoConstruct, IoFastFood } from "react-icons/io5"
 
 //skils icons
@@ -26,9 +26,10 @@ import { SiFastapi , SiPostgresql , SiPython , SiDjango, SiRabbitmq, SiApachekaf
 import { DiJava, DiMysql, DiRedis } from "react-icons/di"
 import { BiLogoSpringBoot } from "react-icons/bi"
 import { BsTypescript } from "react-icons/bs"
-import { FaArrowDown, FaBook, FaCode, FaJsSquare, FaReact } from "react-icons/fa"
+import {FaBook, FaCode, FaJsSquare, FaMoneyBill, FaReact } from "react-icons/fa"
 import { RiTailwindCssFill } from "react-icons/ri"
 import IconTitle from "./components/title/IconTitle"
+import KnowledgeCard from "./features/knowledge/knowledgeCards"
 
 export default function Index() {
     const BASE_URL = import.meta.env.BASE_URL
@@ -90,7 +91,31 @@ export default function Index() {
             icon : <BiUser/>,
             skills : ["react" , "tailwindcss"],
             description : "Um hub centralizado que serve como minha vitrine digital, projetado para apresentar minha trajetória, competências técnicas e os resultados dos meus projetos de forma clara e profissional.",
-        }
+        },
+        {
+            title : "CryptoWatch",
+            icon : <FaMoneyBill/>,
+            skills : ["fastapi","rabitmq","docker","postgres","redis","pytest","arquitetura orientada a eventos","arquitetura hexagonal"],
+            description : "Sistema de monitoramento de criptomoedas",
+        },
+    ]
+
+    const knowgleds = [
+        {
+            knowledgeName : "Desenvolvimento Backend",
+            knowledgeIcon : <FaCode/> , 
+            knowDescription : " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo.",
+        },
+        {
+            knowledgeName : "Desenvolvimento FrontEnd",
+            knowledgeIcon : <FaCode/> , 
+            knowDescription : " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo.",
+        },
+        {
+            knowledgeName : "Arquitetura de software",
+            knowledgeIcon : <FaCode/> , 
+            knowDescription : " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo.",
+        },
     ]
 
     const phone_number = "+55 84 999377152"
@@ -192,7 +217,7 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                    <IconTitle icon={<IoConstruct/>} className="m-auto w-9/10 p-2" p="Mais criações minhas">
                         Outros Projetos
                    </IconTitle>
-                   <div className={`flex ${projetos.length > 2 ? "justify-between" : "justify-around"} w-9/10 m-auto h-fit py-10 flex-wrap`}>
+                   <div className={`flex justify-start gap-10 w-9/10 m-auto h-fit py-10 flex-wrap`}>
                         {projetos.map(element=><ProjectCard {...element}/>)}
                    </div>
             </section>
@@ -200,39 +225,11 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                    <IconTitle icon={<FaBook/>} className="m-auto w-9/10" p="O que eu sei">
                         Conhecimentos
                    </IconTitle>
-                   <div className="flex justify-between items-center w-9/10 m-auto min-h-[40vh] py-5">
+                   <div className="flex justify-between items-center w-9/10 m-auto min-h-[40vh] py-5 flex-wrap gap-10">
                     <div className="h-fit p-2 w-7/10 min-h-[40vh] flex flex-col justify-center items-center gap-3">
-                        {[1,1,1,].map(element=>(
-                            <div className="group text-white p-4 w-full bg-gray-800 rounded-[10px] origin-top cursor-pointer overflow-hidden h-[12vh] hover:h-[50vh] transition-all duration-700">
-                                <div className="h-20 flex items-center gap-5 relative">
-                                    <div className="p-1 border rounded-[10px] text-3xl w-fit h-fit">
-                                        <FaCode/>
-                                    </div>
-                                    <h1 className="text-3xl font-black font-serif">
-                                        Desenvolvimento Backend
-                                    </h1>
-                                    <span>
-                                        <FaArrowDown className="text-3xl group-hover:rotate-[-180deg] transition-transform duration-600 absolute right-2 top-2/6"/>
-                                    </span>
-                                </div>
-                                <p className="origin-top h-fit opacity-0 group-hover:opacity-100 transition-all duration-600">
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio reprehenderit esse veniam sint itaque consequatur unde soluta eum consectetur mollitia dolorum, nostrum, maiores tempore nobis ipsa tenetur? Eaque, nihil vero!
-                                    Repudiandae, fuga? Non cum consequatur odit accusantium eius error ab facere harum incidunt hic sapiente delectus distinctio quisquam libero, provident dolore nulla tempora illo assumenda impedit perspiciatis architecto dolorum corrupti!
-                                    Deleniti nesciunt ipsam perferendis? Voluptatum quo facere, accusamus possimus rerum ratione aperiam inventore placeat ex! Sunt, beatae repellendus. Error modi ullam nemo magnam. Pariatur facere maxime laboriosam officia. Eum, nulla?
-                                    Adipisci labore nihil unde rem veritatis consectetur autem, aut ipsam eveniet earum et soluta dolorum perferendis explicabo tempora iste deleniti ratione hic ducimus. Beatae mollitia commodi ad, nostrum soluta officiis.
-                                    Provident deserunt, quasi illum ratione odio magni dolorem quae id delectus voluptas temporibus quisquam totam dignissimos cumque itaque sed quibusdam maxime earum omnis ad libero tempore asperiores quia nam! Totam.
-                                    Reiciendis magni, soluta facere maiores error eligendi dolorum! Placeat blanditiis accusantium expedita tenetur ipsa nisi omnis asperiores, magni illum facilis officiis, culpa et sequi nemo laudantium, reiciendis ex minus a.
-                                    Nesciunt ad molestiae veritatis at esse ipsum eum corrupti aspernatur excepturi, dicta commodi iste blanditiis laborum, nihil atque nemo laudantium magni deserunt quibusdam. Iure in voluptatibus totam voluptate praesentium labore.
-                                    Animi explicabo amet eius voluptates nesciunt possimus molestias doloremque, excepturi et, dolorem atque, necessitatibus eveniet odio exercitationem ut velit qui quisquam minus. Dicta voluptate, dignissimos ipsa dolor cumque voluptates porro!
-                                    Tempore dignissimos, nulla ipsa aliquam ratione id at nemo blanditiis impedit pariatur architecto, esse excepturi odio vero quis natus, itaque cumque veniam ipsum hic minima laborum quos. Voluptatibus, velit temporibus.
-                                    Distinctio, dolor voluptatum quos maxime voluptas cumque voluptatem vitae maiores voluptate debitis obcaecati dignissimos incidunt at sint? Exercitationem iusto minus distinctio quas ipsa sint, rerum vel atque nobis itaque eveniet.
-                                </p>
-                            </div>
-                        ))}
+                        {knowgleds.map(element=>(<KnowledgeCard {...element}/>))}
                     </div>
-
                      <a href="https://roadmap.sh" target="_blank"><img src="https://roadmap.sh/card/tall/65e134768947e435e7577407?variant=dark&roadmaps=software-design-architecture%2Cbackend%2Csql%2Cgit-github" alt="roadmap.sh"/></a>
-
                    </div>
 
             </section>
