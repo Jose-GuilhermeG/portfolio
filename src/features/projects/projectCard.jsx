@@ -1,5 +1,6 @@
 import { BiCode } from "react-icons/bi"
-import { motion } from "framer-motion"
+import { motion } from "framer-motion" // eslint-disable-line
+import ProjectSkill from "./projectSkills"
 
 export default function ProjectCard({title , description = "" , skills = [] , icon = <BiCode/>  }){
     return (
@@ -20,9 +21,7 @@ export default function ProjectCard({title , description = "" , skills = [] , ic
                 </p>
                 <div className="flex flex-wrap justify-start items-center my-2 font-light text-gray-200">
                     {skills.map(element=>(
-                        <div className="mr-4 border border-gray-500 p-1 my-2 rounded-[5px] capitalize">
-                            {element}
-                        </div>
+                        <ProjectSkill element={element} />
                     ))}
                 </div>
             </motion.div>

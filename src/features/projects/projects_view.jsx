@@ -24,7 +24,7 @@ export default function ProjectsView({children , project_url , project_title , .
                 <Banner image_url='images/last-project.png'/>
             </motion.div>
             {children}
-            <a href={project_url} target="_blank" className="cursor-pointer bg-black rounded-2xl relative text-white flex justify-center items-center text-2xl font-inter min-w-[15%] py-2 m-auto ">
+            <a href={project_url} target="_blank" className="cursor-pointer bg-black rounded-2xl relative text-white flex justify-center items-center text-2xl font-inter min-w-[15%] py-2 m-auto max-w-2/5">
             Ver Mais no
                 <img src={BASE_URL + '/icons/github-icon.svg'} alt="" className="w-16 h-16 mx-5" />
             </a>

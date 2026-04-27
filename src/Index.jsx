@@ -18,7 +18,7 @@ import ProjectCard from "./features/projects/projectCard"
 import phone_icon from "./assets/icons/phone-icon.svg"
 import email_icon from "./assets/icons/email-icon.svg"
 import location_icon from "./assets/icons/location-icon.svg"
-import { BiListCheck , BiStore, BiUser } from "react-icons/bi"
+import { BiCode, BiListCheck , BiStore, BiUser } from "react-icons/bi"
 import { IoConstruct, IoFastFood } from "react-icons/io5"
 
 //skils icons
@@ -30,9 +30,13 @@ import {FaBook, FaCode, FaJsSquare, FaMoneyBill, FaReact } from "react-icons/fa"
 import { RiTailwindCssFill } from "react-icons/ri"
 import IconTitle from "./components/title/IconTitle"
 import KnowledgeCard from "./features/knowledge/knowledgeCards"
+import { MdWorkHistory } from "react-icons/md"
+import ExperieceCard from "./features/experiences/experienceCard"
 
 export default function Index() {
     const BASE_URL = import.meta.env.BASE_URL
+
+    
 
     const header_links = [
         {text : "Sobre Mim" , link : "#about_me"},
@@ -122,6 +126,15 @@ export default function Index() {
     const email = "gulgel.guilherme@gmail.com"
     const location = "Rodolfo Fernandes (RN)"
 
+    const experiences = [
+        {
+            title : "Desenvolvedor Full stack",
+            content : "Aplicação web construida com django , implementação de funcionalidades e testes junto a manutenção no sistema",
+            location : "NADIC",
+            skills : ["python","django","postgres","html","tailwind","docker","selenium",]
+        },
+    ]
+
     const about_me = `Desenvolvedor Backend com foco em Python, atuando principalmente com Django e Django REST Framework no desenvolvimento de APIs REST escaláveis, também possuindo experiência com FastAPI para construção de serviços de alta performance.
 
 Possuo experiência na aplicação de Arquitetura Hexagonal, Clean Architecture e microsserviços, utilizando boas práticas de engenharia de software, padrões de projeto e automação de testes, visando qualidade, manutenibilidade e escalabilidade das soluções.
@@ -164,12 +177,25 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                             <ItemListIcon src={email_icon} content={email} alt={"email icon"}/>
                         </ul>
                     </InfoContainer>
-                    <InfoContainer title="Experiencias">
-                        <ItemListTitle title="Desenvolvedor Full stack" content="Aplicação web construida com django , implementação de funcionalidades e testes junto a manutenção no sistema" extra="Tecnologias : python , django , postgres , html , tailwind , docker , selenium" />
-                    </InfoContainer>
                 </div>
             </section>
-            <section className="w-full min-h-fit">
+            <section className="w-[72%] m-auto h-fit mb-30">
+                <IconTitle icon={<MdWorkHistory/>} p="Minhas Experiencias em Trabalho">
+                    Experiencias
+                </IconTitle>
+                <div className="m-10 flex-col relative h-fit ">
+                    <motion.div 
+                        initial={{height : 0}}
+                        whileInView={{height : "100%"}}
+                        transition={{duration : 1 , delay : 0}}
+                        viewport={{once : true}}
+                        className="w-9/10 z-1 left-4 h-full border-l border-light-green absolute top-0"></motion.div>
+                    {experiences.map((element , index)=>(
+                            <ExperieceCard {...element} index={index} />
+                    ))}
+                </div>
+            </section>
+            <section className="w-full min-h-fit ">
                    <ProjectsView project_title={<span>food order<br />Pedidos e retirada em tempo real</span>} project_url='https://github.com/Jose-GuilhermeG/food_order'>
                         <div className="w-9/10 grid grid-cols-2 grid-rows-2 m-auto gap-15 mb-50 overflow-hidden">
                              <motion.div 
