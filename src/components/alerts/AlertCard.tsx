@@ -11,7 +11,7 @@ interface AlertCardProps{
 
 export function AlertCard({ children  , setShow} : AlertCardProps){
     return (
-        <div className="w-full h-15 fixed bottom-10 flex justify-center items-center">
+        <div className="w-full h-15 fixed bottom-10 flex justify-center items-center z-100">
             <motion.div 
             initial={{y : 100}}
             whileInView={{y : 0}}

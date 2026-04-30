@@ -105,3 +105,12 @@ li{
  .scrollbar-hide::-webkit-scrollbar { 
     display: none; 
 }
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}

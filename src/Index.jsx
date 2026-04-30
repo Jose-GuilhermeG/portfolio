@@ -1,41 +1,35 @@
 //import
 import { motion } from "framer-motion" // eslint-disable-line
+import { useState } from "react"
 
 //components imports
 import SimpleHeader from "./components/headers/SimpleHeader"
 import PrimaryText from "./features/primary_title/PrimaryTitle"
 import ProfilePhoto from "./features/profile_photo/ProfilePhoto"
 import SocialLinks from "./features/social/SocialLinks"
-import SimpleTitle from "./components/title/SimpleTitle"
-import SkillGalery from "./features/skills/SkillsGalery"
-import InfoContainer from "./components/info_container/InfoContainer"
-import ItemListIcon from "./components/lists/ItemList"
-import ItemListTitle from "./components/lists/ItemListTitle"
 import ProjectsView from "./features/projects/projects_view"
 import ProjectCard from "./features/projects/projectCard"
+import ScrollBar from "./layout/ScrollBar"
+import SkillsSection from "./layout/skillsSection"
+import IconTitle from "./components/title/IconTitle"
+import ExperieceCard from "./features/experiences/experienceCard"
+import KnowledgeCard from "./features/knowledge/knowledgeCards"
+import ContactSession from "./layout/ContactSection"
+import { AlertCard , AlertIcon , AlertTitle } from "./components/alerts/AlertCard"
 
 //icons imports
-import { BiCode, BiCopy, BiListCheck , BiStore, BiUser } from "react-icons/bi"
+import { BiListCheck , BiStore, BiUser } from "react-icons/bi"
 import { IoConstruct, IoFastFood } from "react-icons/io5"
-
-//skils icons
-import { SiFastapi , SiPostgresql , SiPython , SiDjango, SiRabbitmq, SiApachekafka, SiPytest, SiJest, SiDocker, SiGithub } from "react-icons/si"
-import { DiJava, DiMysql, DiRedis } from "react-icons/di"
-import { BiLogoSpringBoot } from "react-icons/bi"
-import { BsInstagram, BsTypescript } from "react-icons/bs"
-import {FaBook, FaCode, FaEnvelope, FaJsSquare, FaMapMarker, FaMoneyBill, FaPhone, FaReact } from "react-icons/fa"
-import { RiTailwindCssFill } from "react-icons/ri"
-import IconTitle from "./components/title/IconTitle"
-import KnowledgeCard from "./features/knowledge/knowledgeCards"
-import { MdContactPhone, MdWorkHistory } from "react-icons/md"
-import ExperieceCard from "./features/experiences/experienceCard"
-import BaseColorCardIcon from "./components/icons/BaseColorCardIcon"
-import ItemListContact from "./components/lists/itemListContact"
+import { FaMoneyBill , FaCode , FaBook } from "react-icons/fa"
+import { MdWorkHistory } from "react-icons/md"
+import { RiInformationLine } from "react-icons/ri"
+import AboutMeSection from "./layout/AboutMeSection"
+import ExperiencesSection from "./layout/ExperiencesSection"
 
 export default function Index() {
     const BASE_URL = import.meta.env.BASE_URL
 
-    
+    const [showAlert , setShowAlert] = useState(true);
 
     const header_links = [
         {text : "Tecnologias" , link : "#tecnologias"},
@@ -50,27 +44,6 @@ export default function Index() {
         {href : 'https://www.linkedin.com/in/jose-guilhermeg/' , src : "/icons/linkedin_icon.svg" , alt : "linkedin icon" },
         {href : 'https://www.instagram.com/jose.guilherme.g/' , src : "/icons/instagram_icon.svg" , alt : "instagram icon" },
         {href : 'https://github.com/Jose-GuilhermeG' , src : "/icons/github-icon.svg" , alt : "github icon" },
-    ]
-
-    const skill_list = [
-        {icon : <SiDjango/> , level : 50},
-        {icon : <SiFastapi/> , level : 50},
-        {icon : <SiPostgresql/> , level : 50},
-        {icon : <SiPython/> , level : 70},
-        {icon : <BiLogoSpringBoot/> , level : 0},
-        {icon : <DiJava/> , level : 20},
-        {icon : <DiMysql/> , level : 70},
-        {icon : <DiRedis/> , level : 50},
-        {icon : <SiRabbitmq/> , level : 50},
-        {icon : <FaJsSquare/> , level : 70},
-        {icon : <BsTypescript/> , level : 60},
-        {icon : <FaReact/> , level : 50},
-        {icon : <RiTailwindCssFill/> , level : 60},
-        {icon : <SiApachekafka/> , level : 20},
-        {icon : <SiPytest/> , level : 60},
-        {icon : <SiJest/> , level : 25},
-        {icon : <SiDocker/> , level : 50},
-        {icon : <SiGithub/> , level : 60},
     ]
 
     const projetos = [
@@ -122,72 +95,29 @@ export default function Index() {
         },
     ]
 
-    const contact = [
-        {icon : <FaPhone/> , content : "+55 84 999377152"},
-        {icon : <FaEnvelope/> , content : "gulgel.guilherme@gmail.com"},
-        {icon : <BsInstagram/> , content : "jose.guilherme.g"}
-    ]
-
-    const experiences = [
-        {
-            title : "Desenvolvedor Full stack",
-            content : "Trabalhei em uma aplicação web construida com o framework django realizando implementação de funcionalidades e testes junto a manutenção no sistema",
-            location : "NADIC",
-            skills : ["python","django","postgres","html","tailwind","docker","selenium",]
-        },
-    ]
-
-    const about_me = `Desenvolvedor Backend com foco em Python, atuando principalmente com Django e Django REST Framework no desenvolvimento de APIs REST escaláveis, também possuindo experiência com FastAPI para construção de serviços de alta performance.
-
-Possuo experiência na aplicação de Arquitetura Hexagonal, Clean Architecture e microsserviços, utilizando boas práticas de engenharia de software, padrões de projeto e automação de testes, visando qualidade, manutenibilidade e escalabilidade das soluções.
-
-Tenho conhecimento sólido em ferramentas e tecnologias amplamente utilizadas no mercado, como Docker e Docker Compose, Prometheus, MySQL, Redis, Kafka, além de versionamento de código com Git/GitHub e automação de pipelines com GitHub Actions.
-
-Também possuo experiência em frontend com React, voltada para integração e consumo de APIs, o que me permite ter uma visão mais completa do fluxo de comunicação entre backend e frontend.
-
-Estou em constante evolução, estudando arquitetura de software, mensageria, escalabilidade e boas práticas de desenvolvimento, além de estar em processo de aprendizado em Java com Spring Boot e língua inglesa.`
-
 
     return (
         <main className="bg-gray-950">
+            <ScrollBar/>
+            {showAlert && 
+                <AlertCard setShow={setShowAlert}>
+                    <AlertIcon>
+                        <RiInformationLine/>
+                    </AlertIcon>
+                    <AlertTitle>
+                        Portfolio Em construção
+                    </AlertTitle>
+                </AlertCard>
+            }
             <SimpleHeader links_list={header_links}/>
             <section className=" h-3/5 w-4/5 m-auto min-h-fit flex flex-col justify-around items-center">
-            <PrimaryText component_id="hello_text" feature_color="--color-light-green" feature_text={["Guilherme","back-end"]} text="Olá, me chamo Guilherme e sou um Desenvolvedor Back-end"/>
+            <PrimaryText component_id="hello_text" feature_color="--color-light-green" feature_text={["Guilherme","full-stack"]} text="Olá, me chamo Guilherme e sou um Desenvolvedor full-stack"/>
             <ProfilePhoto image_url="/images/profile_photo.jpg"/>
             <SocialLinks icons_list={social_links} />
             </section>
-            <section className="w-4/5 m-auto">
-                <SimpleTitle id="tecnologias" className="w-9/10 m-auto my-10" icon={<FaCode/>} p="Principais tecnologias que eu uso">
-                    tecnologias
-                </SimpleTitle>
-                <SkillGalery skil_list={skill_list}/>
-            </section>
-            <section className="w-full py-20">
-                <IconTitle icon={<BiUser/>} className="w-[72%] m-auto" p="algumas informações interesantes" id="about_me">
-                    Sobre Mim
-                </IconTitle>
-                <aside>
-                    <p className="w-2/5 mx-[14%] my-10 bg-gray-800 text-white font-light min-h-[40vh] rounded-2xl text-[18px]  p-5">
-                        {about_me}
-                    </p>
-                </aside>
-            </section>
-            <section className="w-[72%] m-auto h-fit mb-50">
-                <IconTitle icon={<MdWorkHistory/>} p="Minhas Experiencias em Trabalho" id="experiences">
-                    Experiencias
-                </IconTitle>
-                <div className="m-10 flex-col relative h-fit gap-5">
-                    <motion.div 
-                        initial={{height : 0}}
-                        whileInView={{height : "100%"}}
-                        transition={{duration : 1 , delay : 0}}
-                        viewport={{once : true}}
-                        className="w-9/10 z-1 left-4 h-full border-l border-light-green absolute top-0"></motion.div>
-                    {experiences.map((element , index)=>(
-                            <ExperieceCard {...element} index={index} />
-                    ))}
-                </div>
-            </section>
+            <SkillsSection/>
+            <AboutMeSection/>
+            <ExperiencesSection/>
             <section className="w-full min-h-fit ">
                    <ProjectsView project_title={<span>food order<br />Pedidos e retirada em tempo real</span>} project_url='https://github.com/Jose-GuilhermeG/food_order'>
                         <div className="w-9/10 grid grid-cols-2 grid-rows-2 m-auto gap-15 mb-50 overflow-hidden">
@@ -250,20 +180,8 @@ Estou em constante evolução, estudando arquitetura de software, mensageria, es
                     </div>
                      <a href="https://roadmap.sh" target="_blank"><img src="https://roadmap.sh/card/tall/65e134768947e435e7577407?variant=dark&roadmaps=software-design-architecture%2Cbackend%2Csql%2Cgit-github" alt="roadmap.sh"/></a>
                    </div>
-
             </section>
-            <section>
-                <IconTitle icon={<MdContactPhone/>} p="Como falar comigo" className="w-9/10 m-auto" id="contact">
-                    Contato
-                </IconTitle>
-                <div className="w-9/10 m-auto text-white">
-                <ul className="flex w-full justify-start gap-10 py-10 flex-wrap">
-                    {contact.map(element=>(
-                            <ItemListContact {...element}/>
-                    ))}
-                    </ul>
-                </div>
-            </section>
+            <ContactSession/>
         </main>
     )
 }
