@@ -68,12 +68,14 @@ export default function Index() {
             icon : <BiUser/>,
             skills : ["react" , "tailwindcss"],
             description : "Um hub centralizado que serve como minha vitrine digital, projetado para apresentar minha trajetória, competências técnicas e os resultados dos meus projetos de forma clara e profissional.",
+            isFinalize : false,
         },
         {
             title : "CryptoWatch",
             icon : <FaMoneyBill/>,
             skills : ["fastapi","rabitmq","docker","postgres","redis","pytest","arquitetura orientada a eventos","arquitetura hexagonal"],
             description : "Sistema de monitoramento de criptomoedas",
+            isFinalize : false,
         },
     ]
 
@@ -112,7 +114,7 @@ export default function Index() {
             <SimpleHeader links_list={header_links}/>
             <section className=" h-3/5 w-4/5 m-auto min-h-fit flex flex-col justify-around items-center">
             <PrimaryText component_id="hello_text" feature_color="--color-light-green" feature_text={["Guilherme","full-stack"]} text="Olá, me chamo Guilherme e sou um Desenvolvedor full-stack"/>
-            <ProfilePhoto image_url="/images/profile_photo.jpg"/>
+            <ProfilePhoto image_url="/images/profile_photo.jpeg"/>
             <SocialLinks icons_list={social_links} />
             </section>
             <SkillsSection/>

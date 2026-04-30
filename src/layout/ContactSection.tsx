@@ -13,7 +13,7 @@ export default function ContactSession(){
     ]
 
     return (
-        <section>
+        <section className="pb-20">
             <IconTitle icon={<MdContactPhone/>} p="Como falar comigo" className="w-9/10 m-auto" id="contact">
                 Contato
             </IconTitle>
