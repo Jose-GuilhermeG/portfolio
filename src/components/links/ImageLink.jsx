@@ -3,8 +3,8 @@ function ImageLink({ href, src, alt, external_site = false , ...props }) {
   const site_url = external_site ? '' : BASE_URL
   
   return (
-    <a href={site_url + href} {...props} className="cursor-pointer hover:scale-105 transition-all relative w-16 h-16 shadow-effect item max-lg:w-14 max-lg:h-14" target="_blank">
-      <img src={BASE_URL + src} alt={alt} className="block absolute w-full h-full" />
+    <a href={site_url + href} {...props} className="cursor-pointer hover:scale-105 transition-all w-3/10 aspect-square shadow-effect item" target="_blank">
+      <img src={BASE_URL + src} alt={alt} className="block w-full h-full" />
     </a>
   );
 }

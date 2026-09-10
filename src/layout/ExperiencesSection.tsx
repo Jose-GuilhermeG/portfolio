@@ -17,17 +17,11 @@ export default function ExperiencesSection(){
     ]
 
     return (
-        <section className="w-[72%] m-auto h-fit mb-50">
+        <section className="w-[72%] m-auto h-fit mb-50 max-sm:w-9/10">
             <IconTitle icon={<MdWorkHistory/>} p="Minhas Experiencias em Trabalho" id="experiences">
                 Experiencias
             </IconTitle>
-            <div className="m-10 flex-col relative h-fit gap-5">
-                <motion.div 
-                    initial={{height : 0}}
-                    whileInView={{height : "100%"}}
-                    transition={{duration : 1 , delay : 0}}
-                    viewport={{once : true}}
-                    className="w-9/10 z-1 left-4 h-full border-l border-light-green absolute top-0"></motion.div>
+            <div className="m-10 flex-col relative h-fit">
                 {experiences.map((element , index)=>(
                         <ExperieceCard {...element} index={index} />
                 ))}

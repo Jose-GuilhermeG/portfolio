@@ -17,8 +17,8 @@ export default function ContactSession(){
             <IconTitle icon={<MdContactPhone/>} p="Como falar comigo" className="w-9/10 m-auto" id="contact">
                 Contato
             </IconTitle>
-            <div className="w-9/10 m-auto text-white">
-            <ul className="flex w-full justify-start gap-10 py-10 flex-wrap">
+            <div className="w-9/10 m-auto text-white max-sm:w-full">
+            <ul className="flex w-full justify-start max-sm:justify-around gap-10 py-10 flex-wrap">
                 {contact.map(element=>(
                         <ItemListContact {...element}/>
                 ))}

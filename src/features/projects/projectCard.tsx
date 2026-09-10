@@ -1,27 +1,26 @@
 import { BiCode } from "react-icons/bi"
 import { motion } from "framer-motion" // eslint-disable-line
 import ProjectSkill from "./projectSkills"
-import { ReactElement } from "react";
+import { ProjectCardProtocol } from "../../types/Projecttypes";
 
-interface ProjectCardProps{
-    title : string;
-    description? : string;
-    skills : Array<String>;
-    icon : ReactElement;
-    isFinalize : boolean;
+interface ProjectCardProps extends ProjectCardProtocol{
     className? : string;
 }
 
-export default function ProjectCard({title , description = "" , skills = [] , icon = <BiCode/> , isFinalize = true , className = "" } : ProjectCardProps){
+export default function ProjectCard({title , description = "" , skills = [] , icon = <BiCode/> , isFinalize = true , className = "" , repositoryLink } : ProjectCardProps){
+
+    const goToRepository = ()=> {if(repositoryLink) window.open(repositoryLink,"_blank")}
+
     return (
             <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 , ease : 'easeInOut'}}
             viewport={{ once: false }} 
-            className={`${className} flex flex-col justify-start p-5 min-h-[35vh] min-w-sm w-3/10 rounded-[10px] text-white bg-gray-900`}>
+            onClick={goToRepository}
+            className={`${className} ${repositoryLink && "cursor-pointer"} flex flex-col justify-start p-5 aspect-square min-w-sm w-3/10 max-xl:w-9/10 rounded-medium text-white bg-gray-900`}>
                 <div className="flex items-center gap-4 justify-between">
-                    <div className="w-fit p-1 text-3xl border my-2 rounded-[5px]">
+                    <div className="w-fit p-1 text-3xl border my-2 rounded-base">
                         {icon}
                     </div>
                     {isFinalize && 
@@ -33,7 +32,7 @@ export default function ProjectCard({title , description = "" , skills = [] , ic
                 <h1 className="text-4xl font-black font-serif py-2 capitalize">
                     {title}
                 </h1>
-                <p className="py-5 font-light">
+                <p className="py-5 font-light max-xl:text-[1.2rem]">
                     {description}
                 </p>
                 <div className="flex flex-wrap justify-start items-center my-2 font-light text-gray-200">

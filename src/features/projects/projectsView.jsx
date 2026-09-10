@@ -5,7 +5,7 @@ import { motion } from "framer-motion" // eslint-disable-line
 export default function ProjectsView({children , project_url , project_title , ...props}){
     const BASE_URL = import.meta.env.BASE_URL
     return (
-        <div className="pb-10" {...props}>
+        <div className="pb-10 max-sm:hidden" {...props}>
             <div className="w-full mb-20">
                     <SimpleTitle id="projects">
                         Ultimo Projeto

@@ -114,3 +114,52 @@ html {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
+
+.experience-icon{
+    background-color: var(--color-black);
+    position: relative;
+}
+
+.experience-icon::before{
+    width : 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    content: "";
+    border-radius: var(--radius-base);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    animation: create-border 0.5s ease-in forwards , set-background 0.7s 0.7s ease-in-out forwards;
+    border: solid 1px var(--color-light-green);
+    clip-path: inset(0 0 100% 0);
+}
+
+.experience-card{
+    position: relative;
+}
+
+.experience-card::before{
+    width : 2px;
+    height: 100%;
+    background-color: var(--color-light-green);
+    position: absolute;
+    content: "";
+    top: 0;
+    left: calc(var(--text-2xl) / 2 + var(--spacing) * 2);
+    clip-path: inset(0 0 100% 0);
+    animation: create-border 0.5s ease-in forwards;
+}
+
+@keyframes create-border{
+    to{
+        clip-path: inset(0 0 0 0 );
+    }
+}
+
+@keyframes set-background {
+    to{
+        background-color: var(--color-light-green);
+    }
+}

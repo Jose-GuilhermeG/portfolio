@@ -16,9 +16,9 @@ export function AlertCard({ children  , setShow} : AlertCardProps){
             initial={{y : 100}}
             whileInView={{y : 0}}
             viewport={{once : true}}
-            className="min-w-sm w-3/10 h-15 bg-light-green text-white rounded-2xl flex justify-around items-center shadow-gray-900 shadow-2xl">
+            className="min-w-sm w-3/10 p-2 max-sm:min-w-5/10 h-15 bg-light-green text-white rounded-2xl flex justify-around items-center shadow-gray-900 shadow-2xl">
                 {children}
-                <GrClose onClick={()=>setShow(false)} className="cursor-pointer"/>
+                <GrClose onClick={()=>setShow(false)} className="cursor-pointer max-sm:h-10"/>
             </motion.div>
         </div>
     )
@@ -26,7 +26,7 @@ export function AlertCard({ children  , setShow} : AlertCardProps){
 
 export function AlertTitle({ children, className = ""} : {children : string , className? : string}){
     return (
-            <h1 className={`${className} w-4/5 text-2xl capitalize font-medium font-serif`}>
+            <h1 className={`${className} w-4/5 text-[1.2rem] max-sm:text-[0.7rem] capitalize font-medium font-serif`}>
                 {children}
             </h1>
     )
@@ -34,7 +34,7 @@ export function AlertTitle({ children, className = ""} : {children : string , cl
 
 export function AlertIcon({children , className = ""} : {children : ReactElement , className? : string}){
     return (
-        <div className={`${className} w-10 text-3xl mx-2`}>
+        <div className={`${className} w-10 text-3xl mx-2 max-sm:text-[1.5rem]`}>
             {children}
         </div>
     )
