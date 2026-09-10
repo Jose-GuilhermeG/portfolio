@@ -7,16 +7,28 @@ import {motion} from "framer-motion"
 interface AlertCardProps{
     children : ReactElement | string;
     setShow : (value : boolean) => void;
+    alertType : "default" | "error"
 }
 
-export function AlertCard({ children  , setShow} : AlertCardProps){
+export function AlertCard({ children  , setShow , alertType} : AlertCardProps){
+
+    const getBackgroundColor = ()=>{ 
+        switch(alertType){
+            case "error":
+                return "bg-red-500"
+            
+            default:
+                return "bg-light-green"
+        }
+    }
+
     return (
         <div className="w-full h-15 fixed bottom-10 flex justify-center items-center z-100">
             <motion.div 
             initial={{y : 100}}
             whileInView={{y : 0}}
             viewport={{once : true}}
-            className="min-w-sm w-3/10 p-2 max-sm:min-w-5/10 h-15 bg-light-green text-white rounded-2xl flex justify-around items-center shadow-gray-900 shadow-2xl">
+            className={`min-w-sm w-3/10 p-2 max-sm:min-w-5/10 h-15 ${getBackgroundColor()} text-white rounded-2xl flex justify-around items-center shadow-gray-900 shadow-2xl`}>
                 {children}
                 <GrClose onClick={()=>setShow(false)} className="cursor-pointer max-sm:h-10"/>
             </motion.div>

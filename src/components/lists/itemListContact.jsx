@@ -2,14 +2,14 @@ import { BiCopy } from "react-icons/bi";
 import BaseColorCardIcon from "../icons/BaseColorCardIcon";
 
 
-export default function ItemListContact({content , icon}){
+export default function ItemListContact({content , icon , setAlert}){
 
     async function copyTextToClipboard(text) {
         try {
             await navigator.clipboard.writeText(text);
-            console.log('Text copied to clipboard');
+            setAlert({message : 'contato copiado com sucesso'});
         } catch (err) {
-            console.error('Failed to copy text: ', err);
+            setAlert({message : 'Houve um Erro ao copiar' , type : "error"});
         }
     }
 

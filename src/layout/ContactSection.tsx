@@ -5,7 +5,11 @@ import { MdContactPhone } from "react-icons/md"
 import IconTitle from "../components/title/IconTitle"
 import ItemListContact from "../components/lists/itemListContact"
 
-export default function ContactSession(){
+interface ContactSessionProps{
+    setAlert : (value : string) => void
+}
+
+export default function ContactSession({setAlert} : ContactSessionProps){
     const contact = [
         {icon : <FaPhone/> , content : "+55 84 999377152"},
         {icon : <FaEnvelope/> , content : "gulgel.guilherme@gmail.com"},
@@ -20,7 +24,7 @@ export default function ContactSession(){
             <div className="w-9/10 m-auto text-white max-sm:w-full">
             <ul className="flex w-full justify-start max-sm:justify-around gap-10 py-10 flex-wrap">
                 {contact.map(element=>(
-                        <ItemListContact {...element}/>
+                        <ItemListContact setAlert={setAlert} {...element}/>
                 ))}
                 </ul>
             </div>

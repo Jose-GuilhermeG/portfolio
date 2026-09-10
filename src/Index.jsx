@@ -30,7 +30,7 @@ import ProjectsSection from "./layout/ProjectsSection"
 export default function Index() {
     const BASE_URL = import.meta.env.BASE_URL
 
-    const [showAlert , setShowAlert] = useState(true);
+    const [Alert , setAlert] = useState({message : "Portfolio Em construção"});
 
     const header_links = [
         {text : "Tecnologias" , link : "#tecnologias"},
@@ -64,19 +64,24 @@ export default function Index() {
             knowledgeIcon : <FaCode/> , 
             knowDescription : " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo.",
         },
+        {
+            knowledgeName : "Segurança de Aplicações",
+            knowledgeIcon : <FaCode/> , 
+            knowDescription : " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus quod qui soluta eius nobis est. Deleniti, enim? Atque laboriosam earum sed placeat enim nisi eligendi itaque, fugit quo magni! Illo.",
+        },
     ]
 
 
     return (
         <main className="bg-gray-950">
             <ScrollBar/>
-            {showAlert && 
-                <AlertCard setShow={setShowAlert}>
+            {Alert.message && 
+                <AlertCard setShow={setAlert} alertType={Alert.type}>
                     <AlertIcon>
                         <RiInformationLine/>
                     </AlertIcon>
                     <AlertTitle>
-                        Portfolio Em construção
+                        {Alert.message}
                     </AlertTitle>
                 </AlertCard>
             }
@@ -144,7 +149,7 @@ export default function Index() {
                         {knowgleds.map(element=>(<KnowledgeCard {...element}/>))}
                     </div>
             </section>
-            <ContactSession/>
+            <ContactSession setAlert={setAlert}/>
         </main>
     )
 }
