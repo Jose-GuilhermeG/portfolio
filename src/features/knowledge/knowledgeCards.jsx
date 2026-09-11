@@ -2,7 +2,7 @@ import { FaArrowDown, FaCode} from "react-icons/fa"
 
 export default function KnowledgeCard({knowledgeName , knowledgeIcon = <FaCode/> , knowDescription}){
     return (
-        <div className="group text-white p-4 w-full bg-gray-800 rounded-[10px] origin-top cursor-pointer overflow-hidden h-[12vh] hover:h-[50vh] transition-all duration-700">
+        <div className="group text-foreground p-4 w-full bg-card rounded-[10px] origin-top cursor-pointer overflow-hidden h-[12vh] hover:h-[50vh] transition-all duration-700 dark:shadow-xl ">
             <div className="h-20 flex items-center gap-5 relative">
                 <div className="p-1 border rounded-[10px] text-[2rem] max-sm:text-[1.5rem] w-fit h-fit">
                     {knowledgeIcon}

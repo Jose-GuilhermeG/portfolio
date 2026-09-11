@@ -8,7 +8,7 @@ export default function IconTitle({children , p = "" , icon , className , ...pro
                 <h1 className="text-[3rem] max-sm:text-[2rem] font-bold font-inter mb-2 text-light-green capitalize">
                     {children}
                 </h1>
-                <p className="text-[1.5rem] max-sm:text-[1rem] font-light">
+                <p className="text-[1.5rem] max-sm:text-[1rem] font-light text-foreground">
                     {p}
                 </p>
             </div>

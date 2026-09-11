@@ -18,13 +18,13 @@ export default function ProjectCard({title , description = "" , skills = [] , ic
             transition={{ duration: 0.3 , ease : 'easeInOut'}}
             viewport={{ once: false }} 
             onClick={goToRepository}
-            className={`${className} ${repositoryLink && "cursor-pointer"} flex flex-col justify-start p-5 aspect-square min-w-sm w-3/10 max-xl:w-9/10 rounded-medium text-white bg-gray-900`}>
+            className={`${className} ${repositoryLink && "cursor-pointer"} flex flex-col justify-start p-5 aspect-square min-w-sm w-3/10 max-xl:w-9/10 rounded-medium text-foreground bg-card dark:shadow-xl`}>
                 <div className="flex items-center gap-4 justify-between">
                     <div className="w-fit p-1 text-3xl border my-2 rounded-base">
                         {icon}
                     </div>
                     {isFinalize && 
-                        <div className="bg-light-green font-medium p-1 rounded-medium capitalize w-30 text-center">
+                        <div className="bg-light-green font-medium p-1 text-white font-black rounded-medium capitalize w-30 text-center">
                             Finalizado
                         </div>
                     }

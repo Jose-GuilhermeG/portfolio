@@ -20,7 +20,7 @@ export default function ExperieceCard({ title, location, content, skills = [], i
                 </div>
                 
                 <div className="flex flex-col flex-1 w-full">
-                    <h1 className="text-xl sm:text-2xl font-black font-serif break-words">
+                    <h1 className="text-xl sm:text-2xl font-black font-serif break-words text-foreground">
                         {title} 
                     </h1>
                     
@@ -29,7 +29,7 @@ export default function ExperieceCard({ title, location, content, skills = [], i
                         <span className="break-words">{location}</span>
                     </span>
                     
-                    <p className="w-full md:w-5/6 lg:w-4/5 text-base sm:text-lg py-2 text-gray-100">
+                    <p className="w-full md:w-5/6 lg:w-4/5 text-base sm:text-lg py-2 text-foreground">
                         {content}
                     </p>
                     

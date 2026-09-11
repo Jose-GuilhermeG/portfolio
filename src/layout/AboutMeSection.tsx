@@ -15,7 +15,7 @@ Estou em constante evolução, atualmente estudando Java com Spring Boot, arquit
                 Sobre Mim
             </IconTitle>
             <aside className="w-full">
-                <p className="w-3/5 my-10 bg-gray-800 text-white font-light min-h-[40vh] rounded-2xl text-[18px] max-xl:w-full p-5 max-sm:text-[0.9rem]">
+                <p className="w-3/5 my-10 bg-card text-foreground dark:shadow-xl font-light min-h-[40vh] rounded-2xl text-[18px] max-xl:w-full p-5 max-sm:text-[0.9rem]">
                     {about_me}
                 </p>
             </aside>

@@ -11,7 +11,7 @@ function SkillCard({children , level = 1}){
 
     return (
         <motion.div 
-            className="w-full max-w-[330px]  py-5 px-3 bg-white rounded-2xl grid grid-rows-[75%_25%] hover:bg-light-green transition-colors [&_img]:w-16 cursor-pointer group max-md:[&_img]:w-14"
+            className="w-full max-w-[330px]  py-5 px-3 bg-white rounded-2xl grid grid-rows-[75%_25%] hover:bg-light-green transition-colors [&_img]:w-16 cursor-pointer group max-md:[&_img]:w-14 dark:shadow-xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 , ease : 'easeInOut'}}

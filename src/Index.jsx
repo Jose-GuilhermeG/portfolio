@@ -73,7 +73,7 @@ export default function Index() {
 
 
     return (
-        <main className="bg-gray-950">
+        <main className="bg-background">
             <ScrollBar/>
             {Alert.message && 
                 <AlertCard setShow={setAlert} alertType={Alert.type}>
@@ -103,7 +103,7 @@ export default function Index() {
                              whileInView={{opacity : 1 , y : 0}}
                              transition={{duration : 0.5 , ease : "easeInOut" }}
                              >
-                                <h1 className="text-white p-5 text-4xl font-black font-inter text-center" >
+                                <h1 className="text-foreground p-5 text-4xl font-black font-inter text-center" >
                                     Escolha o seu desejo do dia
                                     <br />
                                     <span className="text-3xl font-normal">
@@ -129,7 +129,7 @@ export default function Index() {
                              initial={{opacity : 0 , y : 150}}
                              whileInView={{opacity : 1 , y : 0}}
                              transition={{duration : 0.5 , ease : "easeInOut" }}>
-                                <h1 className="text-white p-5 text-4xl font-black font-inter text-center" >
+                                <h1 className="text-foreground p-5 text-4xl font-black font-inter text-center" >
                                     Pedidos Feitos , Numero entregue 
                                     <br />
                                     <span className="text-3xl font-normal">

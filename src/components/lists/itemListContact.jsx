@@ -15,7 +15,7 @@ export default function ItemListContact({content , icon , setAlert}){
 
     return (
         <li 
-            className="p-3 bg-gray-800 rounded-medium text-[1.2rem] flex-1 max-w-9/10 flex items-center gap-5 font-medium font-serif justify-between">
+            className="p-3 bg-card text-foreground dark:shadow-xl rounded-medium text-[1.2rem] flex-1 max-w-9/10 flex items-center gap-5 font-medium font-serif justify-between">
                 <div className="h-full flex justify-center items-center gap-5">
                     <BaseColorCardIcon icon={icon}/>
                     {content}

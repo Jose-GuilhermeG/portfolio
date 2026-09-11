@@ -10,7 +10,7 @@ export default function ProjectsView({children , project_url , project_title , .
                     <SimpleTitle id="projects">
                         Ultimo Projeto
                     </SimpleTitle>
-                    <h1 className="text-3xl text-white capitalize font-light opacity-80 text-center font-inter">
+                    <h1 className="text-3xl text-foreground capitalize font-light opacity-80 text-center font-inter">
                         {project_title}
                     </h1>
                 </div>
