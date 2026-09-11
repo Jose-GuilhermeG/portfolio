@@ -3,11 +3,19 @@ import { FaMoneyBill } from "react-icons/fa";
 import { IoConstruct, IoFastFood } from "react-icons/io5";
 import ProjectCard from "../features/projects/projectCard";
 import IconTitle from "../components/title/IconTitle";
-import { BsQuestion, BsQuestionCircle } from "react-icons/bs";
+import { BsKanban, BsQuestion, BsQuestionCircle } from "react-icons/bs";
 import type{ ProjectCardProtocol } from "../types/Projecttypes";
 
 export default function ProjectsSection() {
     const projetos : ProjectCardProtocol[] = [
+            {
+                title : "Flow Board",
+                skills : ["Arquitetura hexagonal","DDD","TDD","fastapi","pytest","postgres","react","typescript","shadcn","react router","tailwindcss"],
+                description : "Plataforma Kanban criada para auxiliar na organização e implementação de tarefas de forma automatizada",
+                icon : <BsKanban/>,
+                isFinalize : false,
+                repositoryLink : "https://github.com/guilherme-labs/flowBoard"
+            },
             {
                 title : "simple to do" , 
                 skills : ["django","django restframework","postgres" , "docker" , "react" , "typescript" ,"shadcn" , "tailwindcss"] , 
@@ -31,13 +39,6 @@ export default function ProjectsSection() {
                 description : "Um hub centralizado que serve como minha vitrine digital, projetado para apresentar minha trajetória, competências técnicas e os resultados dos meus projetos de forma clara e profissional.",
                 isFinalize : false,
                 repositoryLink : "https://github.com/Jose-GuilhermeG/portfolio",
-            },
-            {
-                title : "CryptoWatch",
-                icon : <FaMoneyBill/>,
-                skills : ["fastapi","rabitmq","docker","postgres","redis","pytest","arquitetura orientada a eventos","arquitetura hexagonal"],
-                description : "Sistema de monitoramento de criptomoedas",
-                isFinalize : false,
             },
             {
                 title : "SimpleQuestion",

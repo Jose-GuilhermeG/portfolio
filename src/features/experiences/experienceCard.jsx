@@ -24,7 +24,7 @@ export default function ExperieceCard({ title, location, content, skills = [], i
                         {title} 
                     </h1>
                     
-                    <span className="flex items-center gap-2 text-sm sm:text-base font-light h-fit my-1 text-gray-300">
+                    <span className="flex items-center gap-2 text-sm sm:text-base font-light h-fit my-1 text-foreground">
                         <GrLocation className="shrink-0" />
                         <span className="break-words">{location}</span>
                     </span>

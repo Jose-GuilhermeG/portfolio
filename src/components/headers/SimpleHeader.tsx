@@ -28,7 +28,7 @@ function SimpleHeader({links_list} : SimpleHeaderProps) {
             ))}
             </nav>
             <button className="cursor-pointer mx-[10%] hidden max-xl:block" onClick={()=>setShowMenu(prev=>!prev)}>
-                <MdMenu className="text-white text-[1.5rem]"/>
+                <MdMenu className="text-foreground text-[1.5rem]"/>
             </button>
             <motion.nav
             initial={{y:-10 ,}}
